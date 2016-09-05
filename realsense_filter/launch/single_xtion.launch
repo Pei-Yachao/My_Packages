@@ -1,0 +1,11 @@
+<!-- Sample launch file for modifying the parameters of RealSense R200 camera -->
+<launch>
+
+  
+  <!-- start sensor-->
+  <include file="$(find openni2_launch)/launch/openni2.launch"></include>  
+  <!--rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_filter)/rviz/test.rviz"/>
+  
+</launch>
+

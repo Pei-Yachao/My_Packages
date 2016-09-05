@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- launchpad_robot -->
+  <node name="launchpad_robot" pkg="nano_tank" type="nano_serial.py">
+    <rosparam file="$(find nano_tank)/param/nano_config.yaml" command="load" />
+  </node>
+  
+</launch>

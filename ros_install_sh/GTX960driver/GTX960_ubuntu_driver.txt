@@ -1,0 +1,25 @@
+step1:download driver from http://www.nvidia.com/object/unix.html or copy NVIDIA-Linux-x86_64-367.35.run to home folder
+step2:sudo apt-get purge nvidia* && sudo apt-get autoremove
+step3:sudo apt-get install gksu
+step4:gksudo gedit /etc/modprobe.d/blacklist-nouveau.conf
+      paste the following lines and save:
+
+        blacklist nouveau
+        blacklist lbm-nouveau
+        options nouveau modeset=0
+        alias nouveau off
+        alias lbm-nouveau off
+
+step5:sudo reboot
+step6:sudo apt-get update
+step7:echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
+step8:sudo update-initramfs -u
+step9:Don't forget eject the usb flash drive. then reboot.
+
+step10:Ctrl+Alt+F1 and sudo stop lightdm
+
+step11:chmod 777 Nvidia.run files 
+step12:sudo ./files
+step13:sudo reboot 
+step14:sudo nvidia-xconfig
+step15:All done! 
