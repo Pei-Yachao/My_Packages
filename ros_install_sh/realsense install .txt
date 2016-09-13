@@ -1,0 +1,40 @@
+sudo apt-get update && sudo apt-get upgrade
+
+sudo apt-get install libusb-1.0-0-dev
+
+sudo apt-get install libudev-dev libv4l-dev
+
+install from package:{
+    git clone https://github.com/IntelRealSense/librealsense.git
+     
+    sh scripts/install_glfw3.sh
+
+    sudo apt-get install qtcreator
+
+    sudo scripts/install_qt.sh 
+
+    sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
+
+    sudo udevadm control --reload-rules && udevadm trigger
+
+    ./scripts/patch-uvcvideo-ubuntu-mainline.sh
+
+    sudo modprobe uvcvideo
+
+    sudo dmesg | tail -n 50
+
+    make && sudo make install
+
+    sudo bin/cpp-capture
+}
+
+sudo apt-get install ros-indigo-realsense-camera
+
+roslaunch realsense_camera r200_nodelet_default.launch
+
+roscd realsense_camera
+rosrun rviz rviz -d rviz/realsenseRvizConfiguration1.rviz
+
+
+problem fixed: camera nodelet manager-2 process has died 
+use: sudo adduser "this computerName" video
