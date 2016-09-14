@@ -31,27 +31,26 @@ class FilterAndPublish
             PointCloud::Ptr vox_cloud (new PointCloud);
             *cloud = *msg;
 
-            // What to do here: 
+            //Go through the passThrough filter
+            pcl::PassThrough<PointXYZ> pth;
+            pth.setInputCloud(cloud);        
+            pth.setFilterLimits(-1.0, 1.0);
+            pth.filter(*cloud_passThrough);
+            
+            // then filter the passThrough cloud into voxel cloud: 
+            
             // 1. Take cloud and put it in a voxel grid while restricting the bounding box
             // 2. Go through the voxels and remove all points in a voxel that has less than this.thresh points
             // 3. Publish resulting cloud
-
-            
-            pcl::PassThrough<PointXYZ> pth;
-            pth.setInputCloud(cloud);
-            // The leaf size is the size of voxels pretty much. Note that this value affects what a good threshold value would be.
-            
-            // I limit the overall volume being considered so lots of "far away" data that is just terrible doesn't even have to be considered.
-            pth.setFilterLimits(-1.0, 1.0);
-            // The line below is perhaps the most important as it reduces ghost points.
-           // pth.setMinimumPointsNumberPerVoxel(this->thresh);
-            pth.filter(*cloud_passThrough);
-            
-            pcl::VoxelGrid<PointXYZ> vox;
-            
+                      
+            pcl::VoxelGrid<PointXYZ> vox;         
             vox.setInputCloud(cloud_passThrough);
+            // The leaf size is the size of voxels pretty much. Note that this value affects what a good threshold value would be.
             vox.setLeafSize(0.01f, 0.1f, 0.01f);
+            // I limit the overall volume being considered so lots of "far away" data that is just terrible doesn't even have to be considered.
             vox.setFilterLimits(-1.0, 1.0);
+            // The line below is perhaps the most important as it reduces ghost points.
+            //vox.setMinimumPointsNumberPerVoxel(this->thresh);
             vox.filter(*vox_cloud);
             
             pub.publish (vox_cloud);
