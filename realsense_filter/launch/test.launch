@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+
+  <!-- Convert it into a point cloud -->
+  <node pkg="nodelet" type="nodelet" name="cloudify"
+        args="load depth_image_proc/point_cloud_xyzrgb record_player_manager --no-bond">
+
+  </node>
+</launch>

@@ -29,7 +29,7 @@
   
     
   <!--rviz -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_filter)/rviz/test.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_filter)/rviz/xtion.rviz"/>
   
 </launch>
 

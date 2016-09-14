@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!--for  two xtion 
+    <node pkg="realsense_filter" type="voxel_filter" name="voxel_filter_1">
+
+        <remap from="depth_points" to="camera1/depth/points"/>
+        <remap from="filtered_points" to="filtered_points_1"/>
+        <rosparam></rosparam>
+    </node>
+
+    <node pkg="realsense_filter" type="voxel_filter" name="voxel_filter_2">
+
+        <remap from="depth_points" to="camera2/depth/points"/>
+        <remap from="filtered_points" to="filtered_points_2"/>
+        <rosparam></rosparam>
+    </node>-->
+
+    <!--for  realsense  -->
+    <node pkg="realsense_filter" type="voxel_filter" name="voxel_filter_1">
+
+        <remap from="depth_points" to="/camera/depth/points"/>
+        <remap from="filtered_points" to="filtered_points"/>
+        <rosparam></rosparam>
+    </node>
+    
+<!--    
+  <include file="$(find realsense_filter)/launch/multi_pcl_to_scan.launch"></include>  -->
+
+      
+</launch>

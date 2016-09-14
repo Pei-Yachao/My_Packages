@@ -45,7 +45,8 @@
     <arg name="usb_port_id"  value="$(arg usb_port_id)" />
   </include>
   
-  
+  <include file="$(find realsense_filter)/launch/single_pcl_to_scan.launch"/>  
+  <include file="$(find realsense_filter)/launch/single_voxel_filtering.launch" />
   
   <!--rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_filter)/rviz/realsense_filter.rviz"/>
