@@ -1,0 +1,48 @@
+1.good software
+  (1)RecordMyDesktop  
+  (2)Shutter  
+2.ubuntu setting
+  (1)hilght ubuntu terminal tab color:
+      step1:creat a file named gtk.css
+      step2:copy the following code (color could be changed)
+        TerminalWindow .notebook tab:active {
+            background-color: #b0c0f0;
+        }
+      step3:copy the file into  ~/.config/gtk-3.0/
+  (2)Ubuntu terminal text color 
+      step1:open ~/.bashrc 
+      step2:Look for the line with #force_color_prompt=yes and uncomment (delete the #).
+      step3:Look for the line below if [ "$color_prompt" = yes ]; then 
+            chage the PS1 line by pasting this: 
+            PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u\[\033[01;37m\]@\[\033[01;35m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;36m\]\$ '
+          
+          
+          
+          
+3.sudo rosdep fix-permissions
+
+4.catkin workspace:
+  source /opt/ros/indigo/setup.bash
+  mkdir -p ~/catkin_ws/src
+  cd ~/catkin_ws/src
+  catkin_init_workspace
+  cd ~/catkin_ws/
+  catkin_make
+  source devel/setup.bash
+  echo $ROS_PACKAGE_PATH /home/youruser/catkin_ws/src:/opt/ros/kinetic/share:/opt/ros/kinetic/stacks
+
+5.change mouse cursor 
+  step1:install below
+    sudo apt-get install gnome-tweak-tool
+    sudo apt-get install oxygen-cursor-theme
+    sudo apt-get install oxygen-cursor-theme-extra
+  step2:
+    open the app tweak
+    in the "Appearance" change the cursor
+  step3:enter below
+    sudo update-alternatives --config x-cursor-theme
+  step4:then enter below 
+    compiz --replace
+  step5: reboot
+  step6: enter below in the terminal to change the size
+    echo "Xcursor.size:40" > ~/.Xresources && gsettings set com.canonical.Unity.Interface cursor-scale-factor 2

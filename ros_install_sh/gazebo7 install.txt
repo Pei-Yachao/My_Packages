@@ -1,0 +1,7 @@
+step1:sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+
+step2:wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+
+step3:sudo apt-get update
+
+step4:sudo apt-get remove .*gazebo.* '.*sdformat.*' '.*ignition-math.*' && sudo apt-get update && sudo apt-get install gazebo7 libgazebo7-dev drcsim7

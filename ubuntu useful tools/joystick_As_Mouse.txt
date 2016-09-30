@@ -1,0 +1,62 @@
+step1: 
+  sudo apt-get install joystick
+  sudo apt-get install jstest-gtk 
+
+step2: 
+  open app jstest to calibrate the joystick
+
+step3:open terminal type below to check joystick event
+  udevadm monitor --udev
+
+step4:
+  (1)install xboxdrv from software center
+  (2)change event2 then confirm witch buttom to use 
+     sudo xboxdrv --evdev /dev/input/event2 --evdev-debug
+
+step5:  
+  sudo modprobe uinput + sudo modprobe joydev
+
+step6:
+  Create a xboxdrv-mouse.ini and save to somewhere
+step7:copy below and save 
+    [xboxdrv]
+    evdev=/dev/input/event2
+    silent=true
+
+    [evdev-absmap]
+
+    ABS_Y=y1
+
+    [ui-axismap]
+
+    y1=REL_WHEEL:1
+
+    [evdev-keymap]
+    BTN_A=a
+    BTN_B=b
+    BTN_X=x
+
+    [ui-buttonmap]
+    a=BTN_LEFT
+    b=BTN_RIGHT
+    x=BTN_MIDDLE
+    # EOF #
+
+ notice:BTN_A ABS_Y... maybe different by the  joystick 
+
+step8:
+
+ sudo xboxdrv --config '/home/u/Documents/ xboxdrv-mouse.ini '
+
+
+
+this site have some information
+http://manpages.ubuntu.com/manpages/precise/man1/xboxdrv.1.html
+http://askubuntu.com/questions/14457/remapping-both-mouse-and-keyboard-to-a-gamepad
+ 
+
+
+
+
+
+
