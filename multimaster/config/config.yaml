@@ -1,0 +1,4 @@
+local_pubs: [/leg_tracker_measurements,scan]
+#foreign_pubs: [foreign_topics_to_register_at_local_master]
+#local_services: [local_services_to_register_at_foreign_master]
+#foreign_services: [foreign_services_to_register_at_local_master]
