@@ -25,12 +25,16 @@ sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
 sudo apt-get install ssh -y
 sudo apt-get install ros-indigo-urg-node -y
 sudo apt-get install ros-indigo-hokuyo-node -y
-
+sudo apt-get install ros-indigo-hector-mapping -y
 sudo apt-get install ros-indigo-gmapping -y
 sudo apt-get install ros-indigo-navigation -y
 sudo apt-get install ros-indigo-kobuki* -y
 sudo apt-get install ros-indigo-openni2* -y
 sudo apt-get install ros-indigo-freenect* -y
+sudo apt-get install ros-indigo-joy -y
+sudo apt-get install joystick -y
+sudo apt-get install jstest-gtk -y 
+
 
 sudo apt-get install chrony -y
 sudo ntpdate -q ntp.ubuntu.com

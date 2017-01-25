@@ -1,0 +1,13 @@
+mkdir -p /home/gtune/catkin_ws/mongodb_store
+
+sudo service mongodb status
+
+
+rosparam set mongodb_port 29848
+
+rosparam set mongodb_host gtune
+
+
+
+roslaunch mongodb_store mongodb_store.launch db_path:=/home/gtune/catkin_ws/mongodb_store db_port:=29848
+

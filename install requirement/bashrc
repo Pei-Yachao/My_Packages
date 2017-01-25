@@ -1,0 +1,8 @@
+export PATH=/usr/local/cuda-8.0/bin:$PATH
+
+export PATH+=:/home/u/software/sdk/tools:/home/u/software/sdk/platform-tools:/home/u/software/android-studio/bin
+
+export ANDROID_HOME=/home/u/software/sdk
+
+export ROS_MASTER_URI=http://192.168.1.232:11311
+export ROS_HOSTNAME=192.168.1.232

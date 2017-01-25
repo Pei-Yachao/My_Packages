@@ -1,0 +1,53 @@
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/dukto.list"
+sudo apt-get update
+sudo apt-get install dukto
+
+You can add the repository key to apt. Keep in mind that the owner of the key may distribute updates, packages and repositories that your system will trust (more information). To add the key, run:
+
+wget http://download.opensuse.org/repositories/home:colomboem/xUbuntu_16.04/Release.key
+sudo apt-key add - < Release.key  
+
+For xUbuntu 15.10 run the following:
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_15.10/ /' >> /etc/apt/sources.list.d/dukto.list"
+sudo apt-get update
+sudo apt-get install dukto
+
+You can add the repository key to apt. Keep in mind that the owner of the key may distribute updates, packages and repositories that your system will trust (more information). To add the key, run:
+
+wget http://download.opensuse.org/repositories/home:colomboem/xUbuntu_15.10/Release.key
+sudo apt-key add - < Release.key  
+
+For xUbuntu 15.04 run the following:
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_15.04/ /' >> /etc/apt/sources.list.d/dukto.list"
+sudo apt-get update
+sudo apt-get install dukto
+
+You can add the repository key to apt. Keep in mind that the owner of the key may distribute updates, packages and repositories that your system will trust (more information). To add the key, run:
+
+wget http://download.opensuse.org/repositories/home:colomboem/xUbuntu_15.04/Release.key
+sudo apt-key add - < Release.key  
+
+For xUbuntu 14.10 run the following:
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_14.10/ /' >> /etc/apt/sources.list.d/dukto.list"
+sudo apt-get update
+sudo apt-get install dukto
+
+You can add the repository key to apt. Keep in mind that the owner of the key may distribute updates, packages and repositories that your system will trust (more information). To add the key, run:
+
+wget http://download.opensuse.org/repositories/home:colomboem/xUbuntu_14.10/Release.key
+sudo apt-key add - < Release.key  
+
+For xUbuntu 14.04 run the following:
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/dukto.list"
+sudo apt-get update
+sudo apt-get install dukto
+
+You can add the repository key to apt. Keep in mind that the owner of the key may distribute updates, packages and repositories that your system will trust (more information). To add the key, run:
+
+wget http://download.opensuse.org/repositories/home:colomboem/xUbuntu_14.04/Release.key
+sudo apt-key add - < Release.key  
+
