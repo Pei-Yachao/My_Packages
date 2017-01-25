@@ -1,0 +1,29 @@
+step0:tensorflow need version 0.11 from source
+step1:
+      sudo apt-get update
+
+      sudo apt-get install libopencv-dev build-essential checkinstall cmake pkg-config yasm libtiff4-dev libjpeg-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev python-dev python-numpy libtbb-dev libqt4-dev libgtk2.0-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils
+
+      sudo add-apt-repository ppa:mc3man/trusty-media
+      sudo apt update
+      sudo apt install ffmpeg
+      sudo apt-get install frei0r-plugins  
+      
+step2:
+      
+      gedit /opencv-2.4.11/modules/gpu/src/graphcuts.cpp 
+      Now search for this specific line .
+      #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER)
+
+      Replace the line with this line .
+      #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) || (CUDART_VERSION >= 8000) 
+
+step3:
+
+      cd opencv  
+      mkdir release  
+      cd release  
+      cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_TIFF=ON -D BUILD_EXAMPLES=ON -D CUDA_GENERATION=Auto -D BUILD_NEW_PYTHON_SUPPORT=ON  .. 
+      
+step4:
+      make -j 20

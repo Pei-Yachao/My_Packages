@@ -1,0 +1,7 @@
+Japanese:sudo apt-get install ibus-anthy
+chinese:ubuntu software center googlepingyin engine for ibus
+        sudo apt-get install ibus-googlepinyin
+
+then under usr/share/applications/keyboard input methords add input methords
+
+finally reboot 

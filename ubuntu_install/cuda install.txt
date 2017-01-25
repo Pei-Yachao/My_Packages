@@ -1,0 +1,42 @@
+step1:download cuda toolkit (linux x86_64 ubuntu)
+step2:
+        sudo dpkg -i cuda-repo-<distro>_<version>_<architecture>.deb
+        sudo apt-get update
+        sudo apt-get install cuda
+       
+step3: 
+        gedit ~/.bashrc
+        copy below and save 
+          export CUDA_HOME=/usr/local/cuda-8.0 
+          export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
+          PATH=${CUDA_HOME}/bin:${PATH} 
+          export PATH 
+step4:reboot
+step5:test
+        cuda-install-samples-8.0.sh  ~/Software/ 
+        cd ~/NVIDIA_CUDA-8.0_Samples 
+        cd 1_Utilities/deviceQuery 
+        make 
+        ./devicequery
+step6:cudnn install example 
+        sudo tar -xzvf cudnn-7.0-linux-x64-v4.0-prod.tgz
+        sudo cp cuda/lib64/* /usr/local/cuda/lib64/
+        sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+        
+        
+        
+        
+problem (sometimes):
+export CUDA_HOME=/usr/local/cuda-8.0 
+the line below will cause roslib lost so comment out this
+#export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
+#PATH=${CUDA_HOME}/bin:${PATH} 
+#export PATH 
+
+
+
+path tensorflow gpu mode worked:
+export CUDA_HOME=/usr/local/cuda-8.0 
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
+PATH=${CUDA_HOME}/bin:${PATH} 
+export PATH 

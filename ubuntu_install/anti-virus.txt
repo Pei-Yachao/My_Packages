@@ -1,0 +1,16 @@
+
+step1:
+  check website:
+    http://www.clamav.net/
+    http://packages.ubuntu.com/xenial/clamav
+
+step2:
+  download from clamav homepage
+
+step3:
+  ./configure
+  make
+  sudo make install
+
+step4:run program
+  sudo freshclam

@@ -1,0 +1,29 @@
+Ubuntu Installation:
+1:
+	sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
+	sudo apt-get install --no-install-recommends libboost-all-dev
+2:install openBLAS
+	cd ~/src
+	git clone https://github.com/xianyi/OpenBLAS
+	cd OpenBLAS
+	make 
+	sudo make PREFIX=/opt/openblas install
+3:ubuntu 14.04 dependencies
+	sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+4:
+	git clone https://github.com/BVLC/caffe.git
+5:step1 modified config file
+	cd caffe
+	cp Makefile.config.example Makefile.config
+  step2 use cudnn:uncomment the  USE_CUDNN := 1
+  step3 make 
+  	make all
+  	make test
+  	make runtest
+*problem make all error:
+	LD -o .build_release/lib/libcaffe.so.1.0.0-rc3
+	/usr/bin/ld: cannot find -lcblas
+	/usr/bin/ld: cannot find -latlas
+	collect2: error: ld returned 1 exit status
+	make: *** [.build_release/lib/libcaffe.so.1.0.0-rc3] Error 1
+ solve:sudo apt-get install libatlas-base-dev
