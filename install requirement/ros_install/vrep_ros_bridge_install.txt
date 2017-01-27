@@ -1,4 +1,0 @@
-V-Rep ROS Bridge (indigo version):
-
-github guide:about "touch CATKIN_IGONORE"
-you shuld first cd to the "quadrotor_tk_handler" folder

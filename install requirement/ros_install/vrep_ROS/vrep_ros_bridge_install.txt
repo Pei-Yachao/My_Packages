@@ -1,0 +1,10 @@
+V-Rep ROS Bridge (indigo version):
+step1:download vrep-ros-bridge and vrep-linux
+step2:
+      cd to the folder quadrotor_tk_handler (whitch is one of the vrep-ros plugin)
+      type 
+          touch CATKIN_IGONORE
+step3:
+      gedit ~/.bashrc
+      export VREP_ROOT_DIR=/home/gtune/Software/V-REP_PRO_EDU_V3_3_2_64_Linux
+step4: catkin_make
